@@ -148,13 +148,13 @@ class Interpreter(object):
         term   : factor ((MUL | DIV) factor)*
         factor : INTEGER
         """
-        result = self.term()
+        result = self.term()    # 14 + 
 
         while self.current_token.type in (PLUS, MINUS):
             token = self.current_token
             if token.type == PLUS:
-                self.eat(PLUS)
-                result = result + self.term()
+                self.eat(PLUS)  # 14 + 2 * 
+                result = result + self.term() 
             elif token.type == MINUS:
                 self.eat(MINUS)
                 result = result - self.term()

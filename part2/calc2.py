@@ -72,6 +72,7 @@ class Interpreter(object):
                 self.skip_whitespace()
                 continue
 
+            # self.integer()会持续往后分析，直到吃完所有连续的数字符号
             if self.current_char.isdigit():
                 return Token(INTEGER, self.integer())
 

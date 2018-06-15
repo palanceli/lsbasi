@@ -85,7 +85,11 @@ class Interpreter(object):
             self.error()
 
     def expr(self):
-        """expr -> INTEGER PLUS INTEGER"""
+        """
+        expr -> INTEGER PLUS INTEGER
+        get_next_token()用来获取和解析下一个token，并缓存
+        eat(...)用来确认缓存中的token是否符合预期，如果符合则调用下一次的get_next_token()
+        """
         # set current token to the first token taken from the input
         self.current_token = self.get_next_token()
 
